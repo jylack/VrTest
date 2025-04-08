@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class AreaCtrl : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("Out of Area");
+    //    if (collision.gameObject.tag ==  ("Ball"))
+    //    {
+    //        collision.gameObject.GetComponent<BallCS>().ReSetPos();
+    //    }
+    //}
+
+    private void OnTriggerExit(Collider other)
     {
         Debug.Log("Out of Area");
-        if (collision.gameObject.tag ==  ("Ball"))
+        if (other.gameObject.tag == ("Ball"))
         {
-            collision.gameObject.GetComponent<BallCS>().ReSetPos();
+            other.gameObject.GetComponent<BallCS>().ReSetPos();
         }
-    }
 
-    
+    }
 
 }
